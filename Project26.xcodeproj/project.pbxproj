@@ -28,6 +28,10 @@
 		CE48911E2C247178007201E4 /* IncomesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48911D2C247178007201E4 /* IncomesView.swift */; };
 		CE82F5302C2831ED0004679B /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82F52F2C2831ED0004679B /* AddCell.swift */; };
 		CE82F5322C284AB30004679B /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82F5312C284AB30004679B /* HomeBottomView.swift */; };
+		CED23AFB2C29B3E800287CF7 /* AccountingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED23AF92C29B3E800287CF7 /* AccountingModel.xcdatamodeld */; };
+		CED23AFE2C29B72F00287CF7 /* AccontingMNodel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23AFC2C29B72F00287CF7 /* AccontingMNodel+CoreDataClass.swift */; };
+		CED23AFF2C29B72F00287CF7 /* AccontingMNodel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23AFD2C29B72F00287CF7 /* AccontingMNodel+CoreDataProperties.swift */; };
+		CED23B032C29B7F700287CF7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23B022C29B7F700287CF7 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		CE48911D2C247178007201E4 /* IncomesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesView.swift; sourceTree = "<group>"; };
 		CE82F52F2C2831ED0004679B /* AddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
 		CE82F5312C284AB30004679B /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
+		CED23AFA2C29B3E800287CF7 /* AccountingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountingModel.xcdatamodel; sourceTree = "<group>"; };
+		CED23AFC2C29B72F00287CF7 /* AccontingMNodel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccontingMNodel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CED23AFD2C29B72F00287CF7 /* AccontingMNodel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccontingMNodel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CED23B022C29B7F700287CF7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,8 @@
 		CE05B55F2C1B28F200A3B97D = {
 			isa = PBXGroup;
 			children = (
+				CED23AFC2C29B72F00287CF7 /* AccontingMNodel+CoreDataClass.swift */,
+				CED23AFD2C29B72F00287CF7 /* AccontingMNodel+CoreDataProperties.swift */,
 				CE05B56A2C1B28F200A3B97D /* Project26 */,
 				CE05B5692C1B28F200A3B97D /* Products */,
 			);
@@ -86,12 +96,14 @@
 		CE05B56A2C1B28F200A3B97D /* Project26 */ = {
 			isa = PBXGroup;
 			children = (
+				CED23B002C29B7AA00287CF7 /* Managers */,
 				CE08E7B62C207041008B3911 /* MVC */,
 				CE08E7CF2C21D044008B3911 /* AppDelegate */,
 				CE08E7D02C21D066008B3911 /* TabBar */,
 				CE05B5742C1B28F500A3B97D /* Assets.xcassets */,
 				CE05B5762C1B28F500A3B97D /* LaunchScreen.storyboard */,
 				CE05B5792C1B28F500A3B97D /* Info.plist */,
+				CED23AF92C29B3E800287CF7 /* AccountingModel.xcdatamodeld */,
 			);
 			path = Project26;
 			sourceTree = "<group>";
@@ -175,6 +187,22 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		CED23B002C29B7AA00287CF7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CED23B012C29B7D300287CF7 /* CoreData */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CED23B012C29B7D300287CF7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CED23B022C29B7F700287CF7 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,18 +282,22 @@
 				CE82F5322C284AB30004679B /* HomeBottomView.swift in Sources */,
 				CE08E7C72C20770A008B3911 /* SettingsController.swift in Sources */,
 				CE05B56C2C1B28F200A3B97D /* AppDelegate.swift in Sources */,
+				CED23AFE2C29B72F00287CF7 /* AccontingMNodel+CoreDataClass.swift in Sources */,
 				CE08E7C52C2076E4008B3911 /* SettingsView.swift in Sources */,
 				CE82F5302C2831ED0004679B /* AddCell.swift in Sources */,
 				CE08E7AF2C201CFE008B3911 /* MainTabBarController.swift in Sources */,
 				CE08E7AA2C200D9A008B3911 /* MainTabBar.swift in Sources */,
 				CE48911E2C247178007201E4 /* IncomesView.swift in Sources */,
 				CE08E7B12C20202A008B3911 /* HomeView.swift in Sources */,
+				CED23B032C29B7F700287CF7 /* CoreDataManager.swift in Sources */,
 				CE4891182C24267C007201E4 /* OnBoardingCell.swift in Sources */,
+				CED23AFF2C29B72F00287CF7 /* AccontingMNodel+CoreDataProperties.swift in Sources */,
 				CE08E7C92C207BD0008B3911 /* SettingsModel.swift in Sources */,
 				CE08E7B32C2020B0008B3911 /* ExpendsAddView.swift in Sources */,
 				CE08E7B52C2020ED008B3911 /* ProfileView.swift in Sources */,
 				CE4891162C24266C007201E4 /* OnBoardingView.swift in Sources */,
 				CE05B56E2C1B28F200A3B97D /* SceneDelegate.swift in Sources */,
+				CED23AFB2C29B3E800287CF7 /* AccountingModel.xcdatamodeld in Sources */,
 				CE48911A2C2470B8007201E4 /* ExpensesTabBarController.swift in Sources */,
 				CE48911C2C24711B007201E4 /* ExpensesView.swift in Sources */,
 				CE08E7CB2C207F2F008B3911 /* SettingsCell.swift in Sources */,
@@ -502,6 +534,19 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CED23AF92C29B3E800287CF7 /* AccountingModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CED23AFA2C29B3E800287CF7 /* AccountingModel.xcdatamodel */,
+			);
+			currentVersion = CED23AFA2C29B3E800287CF7 /* AccountingModel.xcdatamodel */;
+			path = AccountingModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE05B5602C1B28F200A3B97D /* Project object */;
 }

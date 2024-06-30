@@ -32,6 +32,7 @@ class SettingsCell: UITableViewCell {
     
     private lazy var leftImageView: UIImageView = {
         let view = UIImageView()
+        view.tintColor = .black
         return view
     }()
     

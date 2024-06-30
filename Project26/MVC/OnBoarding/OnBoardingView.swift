@@ -68,13 +68,13 @@ class OnBoardingView: UIViewController {
     }
     
     @objc func skipButtonTapped() {
-        navigationController?.pushViewController(HomeView(), animated: true)
+        navigationController?.pushViewController(MainTabBarController(),animated: true)
     }
     
     @objc func nextButtonTapped() {
         if currentPage == 2 {
             UserDefaults.standard.set(true, forKey: "onBoardShow")
-            navigationController?.pushViewController(HomeView(), animated: true)
+            navigationController?.pushViewController(MainTabBarController(), animated: true)
         } else {
             onBoardingCV.isPagingEnabled = false
             onBoardingCV.scrollToItem(at: IndexPath(row: currentPage + 1, section: 0), at: .centeredHorizontally, animated: true)

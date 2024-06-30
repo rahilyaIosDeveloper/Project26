@@ -9,11 +9,9 @@ import SnapKit
 
 class HomeView: UIViewController {
     
-    
     private lazy var homeBottomView: HomeBottomView = {
         let view = HomeBottomView()
         view.layer.cornerRadius = 30
-        view.backgroundColor = .white
         return view
     }()
     
@@ -25,22 +23,22 @@ class HomeView: UIViewController {
         return view
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationItem.hidesBackButton = true
-        if UserDefaults.standard.bool(forKey: "theme") == true {
-            view.overrideUserInterfaceStyle = .dark
-        } else {
-            view.overrideUserInterfaceStyle = .light
-        }
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.init(red: 28/255, green: 89/255, blue: 255/255, alpha: 1)
         setupConstraints()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTheme), name: UserDefaults.didChangeNotification, object: nil)
     }
     
+    @objc private func updateTheme() {
+        updateNavigationBarAppearance()
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     private func setupConstraints() {
         view.addSubview(homeBottomView)
@@ -56,6 +54,30 @@ class HomeView: UIViewController {
             make.bottom.equalTo(homeBottomView.snp.top).offset(-100)
             make.centerX.equalToSuperview()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateNavigationBarAppearance()
+    }
+
+    func updateNavigationBarAppearance() {
+        let isDarkTheme = UserDefaults.standard.bool(forKey: "theme")
+        let appearance = UINavigationBarAppearance()
+
+        if isDarkTheme {
+            view.overrideUserInterfaceStyle = .dark
+            navigationController?.navigationBar.barTintColor = .black
+            navigationItem.rightBarButtonItem?.tintColor = .white
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        } else {
+            view.overrideUserInterfaceStyle = .light
+            navigationController?.navigationBar.barTintColor = .white
+            navigationItem.rightBarButtonItem?.tintColor = .black
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        }
+
+        navigationItem.standardAppearance = appearance
     }
 }
 
